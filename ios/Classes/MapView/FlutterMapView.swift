@@ -194,6 +194,13 @@ class FlutterMapView: MKMapView, UIGestureRecognizerDelegate {
                 self.maxZoomLevel = _maxZoom
             }
         }
+        
+        if let insetsSafeArea: Bool = options["insetsLayoutMarginsFromSafeArea"] as? Bool {
+            if #available(iOS 11.0, *) {
+                self.insetsLayoutMarginsFromSafeArea = insetsSafeArea
+            }
+        }
+
     }
     
     func setUserLocation() {
@@ -271,8 +278,6 @@ class FlutterMapView: MKMapView, UIGestureRecognizerDelegate {
         let flutterAnnotations = self.annotations as? [FlutterAnnotation] ?? []
         let sortedAnnotations = flutterAnnotations.sorted(by: { $0.zIndex  < $1.zIndex })
         return sortedAnnotations
-        
-        
     }
        
     
