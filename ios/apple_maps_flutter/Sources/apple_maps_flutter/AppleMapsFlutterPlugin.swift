@@ -1,7 +1,8 @@
 import Flutter
 import UIKit
 
-public class SwiftAppleMapsFlutterPlugin: NSObject, FlutterPlugin {
+@objc(AppleMapsFlutterPlugin)
+public class AppleMapsFlutterPlugin: NSObject, FlutterPlugin {
     var factory: AppleMapViewFactory
     public init(with registrar: FlutterPluginRegistrar) {
         factory = AppleMapViewFactory(withRegistrar: registrar)
@@ -9,6 +10,6 @@ public class SwiftAppleMapsFlutterPlugin: NSObject, FlutterPlugin {
     }
     
     public static func register(with registrar: FlutterPluginRegistrar) {
-        registrar.addApplicationDelegate(SwiftAppleMapsFlutterPlugin(with: registrar))
+        registrar.addApplicationDelegate(AppleMapsFlutterPlugin(with: registrar))
     }
 }
