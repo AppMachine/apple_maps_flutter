@@ -5,6 +5,7 @@
 //  Created by Luis Thein on 09.10.19.
 //
 
+import Flutter
 import Foundation
 import MapKit
 import CoreLocation
